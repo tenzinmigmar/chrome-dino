@@ -11,7 +11,6 @@ class Dino(pygame.sprite.Sprite):
 
         self.image = self.images[self.index]
 
-        # learn significance of rect here
         self.rect = self.image.get_rect()
         self.rect.topleft = [x, y]
 
@@ -22,3 +21,14 @@ class Dino(pygame.sprite.Sprite):
             self.index = 0
 
         self.image = self.images[self.index]
+
+def clouds(img, screen, x, x2):
+    screen.blit(img, (x, 90))
+    screen.blit(img, (x2, 180))
+
+def ground(img, screen, x, x2):
+    ground = pygame.transform.scale(img, (1202, 14))
+    screen.blit(ground, (x, 480))
+    screen.blit(ground, (x2, 480))
+
+
